@@ -20,7 +20,6 @@ exports.handler = async (event, context, callback) => {
       body: JSON.stringify([createdUser, createdUser2])
     }
   } catch (error) {
-    console.log(error);
     console.error(error)
     return { statusCode: 500 }
   }
