@@ -3,7 +3,8 @@ const prisma = new PrismaClient()
 
 exports.handler = async (event, context, callback) => {
   try {
-    
+    await Promise.all([prisma.profile.deleteMany(), prisma.post.deleteMany()])
+    await prisma.user.deleteMany()
 
     const createdUser = await prisma.user.create({
       data: seedUser
@@ -19,6 +20,7 @@ exports.handler = async (event, context, callback) => {
       body: JSON.stringify([createdUser, createdUser2])
     }
   } catch (error) {
+    console.log(error);
     console.error(error)
     return { statusCode: 500 }
   }
