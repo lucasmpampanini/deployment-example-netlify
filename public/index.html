@@ -98,7 +98,7 @@
         responseContainer.textContent = JSON.stringify(res, null, 2)
       }
 
-      function getApi(endpoint) {
+      const getApi = endpoint => {
         loader.classList.remove('invisible')
         fetch(`/.netlify/functions/${endpoint}`)
           .then(function(response) {
@@ -109,7 +109,6 @@
             responseContainer.classList.remove('invisible')
           })
           .catch(function(err) {
-            console.log(err);
             responseContainer.textContent = 'Error fetching'
             
           })
