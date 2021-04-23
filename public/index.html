@@ -109,6 +109,7 @@
             responseContainer.classList.remove('invisible')
           })
           .catch(function(err) {
+            console.log(err);
             responseContainer.textContent = 'Error fetching'
             
           })
