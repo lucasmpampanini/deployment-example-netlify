@@ -3,8 +3,7 @@ const prisma = new PrismaClient()
 
 exports.handler = async (event, context, callback) => {
   try {
-    await Promise.all([prisma.profile.deleteMany(), prisma.post.deleteMany()])
-    await prisma.user.deleteMany()
+    
 
     const createdUser = await prisma.user.create({
       data: seedUser
