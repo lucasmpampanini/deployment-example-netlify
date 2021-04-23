@@ -13,7 +13,7 @@ exports.handler = async (event, context, callback) => {
       body: JSON.stringify(posts)
     }
   } catch (error) {
-    console.log(errror);
+    console.log(error);
     console.error(error)
     return {
       statusCode: 500,
