@@ -100,7 +100,7 @@
 
       const getApi = endpoint => {
         loader.classList.remove('invisible')
-        fetch(`netlify/functions/${endpoint}`)
+        fetch(`/netlify/functions/${endpoint}`)
           .then(function(response) {
             return response.json()
           })
